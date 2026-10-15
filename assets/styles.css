@@ -1,0 +1,207 @@
+/* ---------------------------------------------------------------------
+   Invoice Converter Pro - visual theme
+   Loaded once at the top of app.py via st.markdown(..., unsafe_allow_html=True)
+   ------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --brand-start: #6C63FF;
+    --brand-end: #4338CA;
+    --ink: #1F2430;
+    --muted: #6B7280;
+    --card-bg: #FFFFFF;
+    --page-bg: #F5F6FA;
+    --success: #22C55E;
+}
+
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.stApp {
+    background: var(--page-bg);
+}
+
+/* trim Streamlit's default top padding so the topbar sits flush */
+.block-container {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    max-width: 1180px;
+}
+
+/* ---------------- topbar ---------------- */
+.st-key-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+    margin-bottom: 1.5rem;
+}
+.topbar-brand {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.topbar-nav {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+.topbar-nav span {
+    margin-left: 1.5rem;
+}
+
+/* ---------------- hero ---------------- */
+.st-key-hero {
+    background: linear-gradient(135deg, var(--brand-start) 0%, var(--brand-end) 100%);
+    border-radius: 22px;
+    padding: 2.75rem 2.75rem 2.5rem 2.75rem;
+    margin-bottom: 1.75rem;
+}
+.hero-title {
+    color: #FFFFFF;
+    font-size: 2.35rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+}
+.hero-subtitle {
+    color: rgba(255,255,255,0.88);
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin-bottom: 1.4rem;
+    max-width: 34rem;
+}
+.hero-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.hero-bullets li {
+    color: rgba(255,255,255,0.95);
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.55rem;
+}
+.hero-bullets .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--success);
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+
+/* ---------------- upload card (nested inside hero) ---------------- */
+.st-key-upload-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 1.4rem 1.4rem 1.6rem 1.4rem;
+    box-shadow: 0 12px 32px rgba(20, 20, 60, 0.18);
+}
+.upload-icon {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 0.35rem;
+}
+.upload-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+}
+.upload-subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+}
+
+/* restyle the native Streamlit dropzone to sit flush inside the card */
+[data-testid="stFileUploaderDropzone"] {
+    background: #F8F8FF;
+    border: 1.5px dashed #C7C3FF;
+    border-radius: 14px;
+}
+[data-testid="stFileUploaderDropzone"]:hover {
+    border-color: var(--brand-start);
+}
+[data-testid="stFileUploader"] section > button {
+    background: linear-gradient(135deg, var(--brand-start) 0%, var(--brand-end) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* ---------------- primary buttons everywhere ---------------- */
+.stButton > button, .stDownloadButton > button {
+    background: linear-gradient(135deg, var(--brand-start) 0%, var(--brand-end) 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    box-shadow: 0 4px 14px rgba(76, 63, 220, 0.28);
+}
+.stButton > button:hover, .stDownloadButton > button:hover {
+    filter: brightness(1.05);
+    color: #FFFFFF;
+}
+
+/* ---------------- feature cards ---------------- */
+.feature-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.6rem 1.3rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+    height: 100%;
+}
+.feature-icon {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 50%;
+    background: #EEF0FF;
+    color: var(--brand-end);
+    font-size: 1.3rem;
+    margin: 0 auto 0.8rem auto;
+}
+.feature-title {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 1.02rem;
+    margin-bottom: 0.4rem;
+}
+.feature-desc {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* ---------------- results section ---------------- */
+.st-key-results-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 1.75rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+}
+.results-heading {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+}
